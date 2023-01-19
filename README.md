@@ -16,7 +16,7 @@ This project uses the PyTorch framework and the MNIST dataset to demonstrate the
 
 - Numpy
 
-- Matplotlib (for visualizing results)
+- Seaborn and Matplotlib (for visualizing results)
 
 
 ## Usage

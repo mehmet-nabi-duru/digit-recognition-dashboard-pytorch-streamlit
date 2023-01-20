@@ -6,7 +6,7 @@ import torch
 import time
 import torchvision.transforms as transforms
 from model import CNN
-from utils import *
+from utils import num_graph, image_to_model, get_canvas_image, create_canvas, load_cnn_model, get_device
 
 st.set_page_config(
     page_title="Digit Recognition Using CNN",

@@ -130,7 +130,7 @@ def num_graph(output):
 
 st.set_page_config(
     page_title="Digit Recognition Using CNN",
-    page_icon=":input_numbers:",
+    page_icon=":1234:",
     layout="wide",# 'centered'
     initial_sidebar_state="auto",
 )

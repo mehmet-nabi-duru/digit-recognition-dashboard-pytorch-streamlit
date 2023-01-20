@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import torch
-import torchvision
 import time
 import torchvision.transforms as transforms
 from model import CNN
@@ -53,7 +52,7 @@ if canvas_result.image_data is not None:
     # padding
     tensor_image = torch.nn.functional.pad(tensor_image, (3,3,3,3), "constant", 0)
     # normalization
-    normalize = torchvision.transforms.Normalize(mean=0.1307, std=0.3081) # mean and standard deviation values for MNIST dataset
+    normalize = transforms.Normalize(mean=0.1307, std=0.3081) # mean and standard deviation values for MNIST dataset
     tensor_image = normalize(tensor_image)
     # st.write(tensor_image.shape)
 

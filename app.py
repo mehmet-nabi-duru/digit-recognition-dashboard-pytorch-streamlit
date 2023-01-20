@@ -31,7 +31,7 @@ realtime_update = st.sidebar.checkbox("Realtime Update for the Canvas", value=Tr
 pen_thickness = st.sidebar.slider("Pen thickness: ", 1, 25, 9)
 
 with left_col:
-    st.write("Draw a single number between 0-9 in the box below.")
+    st.write("#### Draw a single number between 0-9 in the box below.")
     # Creating the canvas
     canvas_result = create_canvas(pen_thickness=pen_thickness, realtime_update=realtime_update)
 
@@ -45,7 +45,7 @@ if canvas_result.image_data is not None:
     output_image = get_canvas_image(canvas_result=canvas_result)
     
     # Now we need to resize it, however doing so causes issues with the default arguments because it alters the range of pixel values to negative or positive.
-    compressed_output_image = output_image.resize((22,22), Image.BILINEAR)
+    compressed_output_image = output_image.resize((22,22), Image.NEAREST) # Image.BILINEAR works too
     # transform image to tensor
     image_to_tensor = transforms.ToTensor()
     tensor_image = image_to_tensor(compressed_output_image)
@@ -86,14 +86,14 @@ if canvas_result.image_data is not None:
 
         with right_col:
             if torch.sum(tensor_image) <= 0:
-                st.write("Please draw a digit")
+                st.write("#### Please draw a digit")
             else:
 
                 with left_col:
-                    st.write("What model sees")
+                    st.write("#### What model sees")
                     st.image(model_image)
 
-                st.write(f"### Predicted as **{number}** with {certainty:.2f}% certainty.",)
+                st.write(f"#### Predicted as `{number}` with {certainty:.2f}% certainty.",)
                 number_graph = num_graph(output)
 
                 st.pyplot(number_graph)

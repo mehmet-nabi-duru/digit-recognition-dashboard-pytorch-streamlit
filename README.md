@@ -33,6 +33,8 @@ This project uses the PyTorch framework and the MNIST dataset to demonstrate the
 
 ## Model Training
 
+![visualization of the used neural network]("cnn.png")
+
 The MNIST dataset is used to train the model, which contains 60,000 training photos and 10,000 test images of handwritten digits. The following are the steps in the training process:
 
 - Loading and normalizing the MNIST training and test datasets using torchvision

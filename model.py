@@ -1,8 +1,6 @@
 # import the libs
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-# from tqdm.notebook import tqdm
 import numpy as np
 from torchvision import datasets,transforms
 import torch.optim as optim

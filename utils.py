@@ -3,7 +3,6 @@ import torch.nn as nn
 import numpy as np
 from PIL import Image
 import torch
-import torchvision
 import time
 import torchvision.transforms as transforms
 from model import CNN
